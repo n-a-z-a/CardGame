@@ -49,11 +49,6 @@ public class Card implements Comparable<Card> {
     @Override
     public int compareTo(Card otherCard) {
 
-        //2222333344445555
-
-        //-ve if a<b
-        //0 if a==b
-        //+ve if a>b
 
         //if value is different then
         // determine which is smaller/larger
@@ -75,15 +70,9 @@ public class Card implements Comparable<Card> {
 
     public static void main(String[] args) {
         Card aceOfSpades = new Card(SPADES, "A", 14);
-//        aceOfSpades.setSuit(SPADES);
-//        aceOfSpades.setSymbol("A");
         System.out.println(aceOfSpades);
 
         Card fourOfHearts = new Card(HEARTS, "4", 4);
         System.out.println(fourOfHearts);
-//        System.out.println(SPADES);
-//        System.out.println(HEARTS);
-//        System.out.println(DIAMONDS);
-//        System.out.println(CLUBS);
     }
 }

@@ -1,123 +1,7 @@
 package cardgame;
-//
-//import java.util.Scanner;
-//
-//public class SnapGame extends CardGame{
-//
-//    private Scanner scanner = new Scanner (System.in);
-//
-//    public SnapGame() {
-//        super("Snap!");
-//    }
-//
-//    //Creates a player by reading a name from console
-//    public Player[] createPlayers() {
-//        Player[] players = new Player[2];
-//        for (int i = 0; i < 2 ; i++) {
-//            System.out.println("Player " + (i+1) + ", please enter your name");
-//            String playerName = scanner.nextLine();
-//            players[i] = new Player(playerName);
-//        }
-//        System.out.println("The players are: " + players[0].getName() + " and " + players[1].getName());
-//        return players;
-//    }
-//
-//
-//
-//
-//    public void play () {
-//
-////        //create player 1
-////
-////        //ask their name
-////        System.out.println("Player 1, please enter your name");
-////        String player1Name = scanner.nextLine();
-////
-////        //create a player object
-////        Player player1 = new Player(player1Name);
-////
-////        //create player 2
-////        System.out.println("Player 2, please enter your name");
-////        String player2Name = scanner.nextLine();
-////        Player player2 = new Player(player2Name);
-//
-//
-////        System.out.println("The players are: " + player1.getName() + " and " + player2.getName());
-//
-//        //create players
-//        Player[] players =  createPlayers();
-//
-//
-//        //shuffle deck
-//        shuffleDeck();
-//
-//        //player1 starts
-//        System.out.println(players[0].getName() + " press ENTER to deal");
-//        scanner.nextLine();
-//        //deal top card
-//        Card previousCard = dealCard();
-//        System.out.println("Card: " + previousCard);
-//
-//        while (true) {
-//
-//            //player2's turn
-//            System.out.println(players[1].getName() + " press ENTER to deal:");
-//            scanner.nextLine();
-//
-//            //deal a card
-//            Card nextCard = dealCard();
-//            if (nextCard == null) {
-//                System.out.println("No one wins!");
-//                break;
-//            }
-//            System.out.println("Card: " + nextCard);
-//
-//            // compare values of last two cards
-//            //if values are the same then player2 wins
-//            if (previousCard.getValue() == nextCard.getValue()) {
-//                System.out.println("SNAP!");
-//                System.out.println("Congratulations " + players[1].getName() + "! You win!");
-//                break;
-//            }
-//
-//            //else player1 deals another card - go around again
-//
-//            //reassign previous card
-//            previousCard = nextCard;
-//            System.out.println(players[0].getName() + " press ENTER to deal:");
-//            scanner.nextLine();
-//            nextCard = dealCard();
-//            if (nextCard == null) {
-//                System.out.println("No one wins!");
-//                break;
-//            }
-//            System.out.println("Card: " + nextCard);
-//
-//            // compare values of last two cards
-//            //if values are the same then player1 wins
-//            if (previousCard.getValue() == nextCard.getValue()) {
-//                System.out.println("SNAP!");
-//                System.out.println("Congratulations " + players[0].getName() + "! You win!");
-//                break;
-//            }
-//
-//            previousCard = nextCard;
-//
-//        }
-//
-//        System.out.println("Thanks for playing!");
-//
-//    }
-//
-//    public static void main(String[] args) {
-//        SnapGame snapGame = new SnapGame();
-//        System.out.println(snapGame.getName());
-//        snapGame.play();
-//    }
-//}
+
 
 import java.time.Instant;
-import java.time.LocalTime;
 import java.util.Scanner;
 
 public class SnapGame extends CardGame {
@@ -150,26 +34,16 @@ public class SnapGame extends CardGame {
 
     public void play() {
 
-        // create player 1
-
-        // create a player object
-//        Player player1 = createPlayer(1);
-
-        // create a player object
-//        Player player2 = createPlayer(2);
 
         // create players
         Player[] players = createPlayers(2);
         int currentPlayerIndex = 0;
 
-//        System.out.println( String.format( "The players are: %s and %s", player1.getName(), player2.getName() ) );
 
         // shuffle deck
         shuffleDeck();
 
-//        for (int i = 0; i < 30; i++) {
-//            dealCard();
-//        }
+
 
         // holds previous card
         Card previousCard = null;
@@ -180,7 +54,6 @@ public class SnapGame extends CardGame {
         // infinite loop
         // while ( condition ) {
         // }
-        // can one ZERO or more times!
         boolean justDoIt = true;
         while( justDoIt ) {
 
@@ -204,7 +77,7 @@ public class SnapGame extends CardGame {
                     break;
                 }
             } catch (Exception e) {
-                // if previous player won AND tto slow then they lose!
+                // if previous player won AND too slow then they lose!
                 if (previousPlayerWon) {
                     System.out.println("Too slow!");
                     System.out.println( String.format("You snooze you lose %s !", previousPlayer.getName() ) );
@@ -232,11 +105,6 @@ public class SnapGame extends CardGame {
                 // if values are the same then player wins!
 
                 previousPlayerWon = previousCard.getValue() == nextCard.getValue();
-//                if( previousCard.getValue() == nextCard.getValue() ) {
-//                    System.out.println("SNAP!");
-//                    System.out.println( String.format("Congratulations %s! You win!!", currentPlayer.getName() ) );
-//                    break;
-//                }
 
                 // else deal another card - go around again
 

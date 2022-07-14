@@ -63,9 +63,8 @@ public class CardGame {
 
 
     public static void main(String[] args) {
-    CardGame cardGame = new CardGame("Snap");
-//    cardGame.generateDeckOfCards();
 
+    CardGame cardGame = new CardGame("Snap");
         System.out.println(cardGame.getDeck());
         System.out.println(cardGame.getDeck().size());
         cardGame.shuffleDeck();
